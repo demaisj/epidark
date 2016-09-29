@@ -1,3 +1,4 @@
+@-moz-document domain("epitech.eu") {
 body {
     color: #FFF;
     background: #333;
@@ -350,4 +351,5 @@ h2 {
 #module .bloc.main .data .item.desc.credits label,
 #module .bloc.main .data .item.desc.semestre label {
     color: #FFF
+}
 }
