@@ -213,7 +213,7 @@ input[type="submit"],
 input[type="button"],
 input[type="reset"],
 button,
-.button:not(.contextmenu) {
+.button {
     border: none;
     border-radius: 2px;
     color: var(--light-1);
@@ -241,44 +241,44 @@ button,
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
 }
 
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+button:hover,
+.button:hover {
+    background-color: rgba(158,158,158,.2) !important;
+}
+
 input[type="submit"]:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 button:active,
-.button:not(.contextmenu):active,
+.button:active,
 input[type="submit"].ui-active,
 input[type="button"].ui-active,
 input[type="reset"].ui-active,
 button.ui-active,
-.button:not(.contextmenu).ui-active {
+.button.ui-active {
     box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
-    background-color: rgba(158,158,158,.4);
+    background-color: rgba(158,158,158,.4) !important;
 }
 
 input[type="submit"]:focus:not(:active),
 input[type="button"]:focus:not(:active),
 input[type="reset"]:focus:not(:active),
 button:focus:not(:active),
-.button:not(.contextmenu):focus:not(:active){
+.button:focus:not(:active){
     box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
-    background-color: rgba(158,158,158,.4);
+    background-color: rgba(158,158,158,.4) !important;
 }
 
-input[type="submit"]:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-button:hover,
-.button:not(.contextmenu):hover {
-    background-color: rgba(158,158,158,.2);
-}
-
-.button:not(.contextmenu)>span{
+.button>span{
     display:inline !important;
     background:none !important;
     margin:0 !important;
 }
 
-.button:not(.contextmenu)>span .label{
+.button>span .label{
     display:inline !important;
     padding:0 !important;
     text-align:inherit !important;
@@ -287,8 +287,8 @@ button:hover,
     margin:0 !important;
 }
 
-.button:not(.contextmenu)>span .icon{
-    display:none;
+.button>span .icon{
+    display:none !important;
 }
 
 .button.register,
@@ -306,7 +306,71 @@ button:hover,
 .button.convert,
 .button.note,
 .button.diffuse,
-.button.self-assign{
+.button.self-assign,
+.button.register:hover,
+.button.unregister:hover,
+.button.apply:hover,
+.button.ok:hover,
+.button.evaluate:hover,
+.button.new-ticket:hover,
+.button.destroy:hover,
+.button.save:hover,
+.button.create:hover,
+.button.confirm:hover,
+.button.stage:hover,
+.button.inherit-duplicate:hover,
+.button.convert:hover,
+.button.note:hover,
+.button.diffuse:hover,
+.button.self-assign:hover,
+.button.register:active,
+.button.unregister:active,
+.button.apply:active,
+.button.ok:active,
+.button.evaluate:active,
+.button.new-ticket:active,
+.button.destroy:active,
+.button.save:active,
+.button.create:active,
+.button.confirm:active,
+.button.stage:active,
+.button.inherit-duplicate:active,
+.button.convert:active,
+.button.note:active,
+.button.diffuse:active,
+.button.self-assign:active,
+.button.register.ui-active,
+.button.unregister.ui-active,
+.button.apply.ui-active,
+.button.ok.ui-active,
+.button.evaluate.ui-active,
+.button.new-ticket.ui-active,
+.button.destroy.ui-active,
+.button.save.ui-active,
+.button.create.ui-active,
+.button.confirm.ui-active,
+.button.stage.ui-active,
+.button.inherit-duplicate.ui-active,
+.button.convert.ui-active,
+.button.note.ui-active,
+.button.diffuse.ui-active,
+.button.self-assign.ui-active,
+.button.register:focus:not(:active),
+.button.unregister:focus:not(:active),
+.button.apply:focus:not(:active),
+.button.ok:focus:not(:active),
+.button.evaluate:focus:not(:active),
+.button.new-ticket:focus:not(:active),
+.button.destroy:focus:not(:active),
+.button.save:focus:not(:active),
+.button.create:focus:not(:active),
+.button.confirm:focus:not(:active),
+.button.stage:focus:not(:active),
+.button.inherit-duplicate:focus:not(:active),
+.button.convert:focus:not(:active),
+.button.note:focus:not(:active),
+.button.diffuse:focus:not(:active),
+.button.self-assign:focus:not(:active){
     background:var(--accent) !important;
 }
 
