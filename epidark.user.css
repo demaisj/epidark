@@ -669,7 +669,7 @@ fieldset{
     color: #fff;
 }
 #header .intra .navigation tr td .button .icon {
-    display: none;
+    display: none !important;
 }
 #header .intra .navigation tr td .button .label {
     display: inline;
