@@ -555,6 +555,8 @@ fieldset{
     position: absolute;
     top: 0;
     right: 0;
+    width: 60px;
+    min-width: initial;
 }
 #header #identification .infos {
     height: 48px;
