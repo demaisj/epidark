@@ -551,6 +551,29 @@ fieldset{
     line-height: 48px;
     transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+#header #notification .dropdown.message .layer .item:not(:last-child) a {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+    background: none !important;
+    height: auto;
+    line-height: inherit;
+}
+
+#header #notification .dropdown.message .layer .item:not(:last-child) a:hover {
+    background: none !important;
+    border-bottom-color: currentColor;
+}
+
+#header #notification .dropdown.message .layer .item:not(:last-child) a:active {
+    background: none !important;
+}
+
+#header #notification .dropdown.message .layer .item:last-child{
+    padding-bottom:0;
+}
 #header #identification {
     position: absolute;
     top: 0;
