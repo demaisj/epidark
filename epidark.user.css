@@ -374,6 +374,38 @@ button:focus:not(:active),
     background:var(--accent) !important;
 }
 
+.popup .button{
+    background: 0 0 !important;
+    border: none !important;
+    color: var(--light1) !important;
+    box-shadow: none !important;
+}
+
+.popup .button:hover{
+    background-color: rgba(158,158,158,.12) !important;
+}
+
+.popup .button:active {
+    background-color: rgba(158,158,158,.3) !important;
+}
+
+.popup .button:focus:not(:active) {
+    background-color: rgba(0,0,0,.12) !important;
+}
+
+.popup .button.apply,
+.popup .button.ok,
+.popup .button.add,
+.popup .button.submit,
+.popup .button.save,
+.popup .button.find,
+.popup .button.import,
+.popup .button.select,
+.popup .button.note,
+.popup .button.create{
+    color: var(--accent) !important;
+}
+
 fieldset{
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
     border-radius: 2px;
@@ -1091,7 +1123,7 @@ fieldset{
 
 .popup.custom .item.buttons {
     padding: 8px 8px 8px 24px;
-    display: -webkit-flex;
+    /*display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: row-reverse;
@@ -1099,20 +1131,21 @@ fieldset{
     flex-direction: row-reverse;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    flex-wrap: wrap;*/
     background: none;
     height: auto;
     position: relative;
+    text-align: right;
 }
 
 .popup.custom .item.buttons .button {
     margin: 0;
     margin-right: 8px;
-    float:none;
+    float:none !important;
     width:auto;
 }
 
-.popup.custom .item.buttons .button:first-child{
+.popup.custom .item.buttons .button:last-child{
     margin: 0;
 }
 
