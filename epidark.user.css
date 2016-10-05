@@ -45,6 +45,12 @@ body {
     right: 5px;
     margin: 0;
 }
+#header #language a{
+    border: none;
+}
+#header #language a:hover{
+    transform: scale(1.2);
+}
 #main{
     margin:0;
 }
