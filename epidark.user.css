@@ -35,6 +35,7 @@ body {
 }
 #body-wrapper #sidebar {
     padding-top: 112px;
+    min-width: initial !important;
 }
 #body-wrapper #content {
     padding: 136px 16px 24px 16px;
