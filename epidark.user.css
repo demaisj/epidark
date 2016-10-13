@@ -904,6 +904,11 @@ fieldset{
     margin: 0 !important;
     padding: 0 !important;
 }
+    
+#sidebar > .title .picture img{
+    width: 100%;
+    margin-top: -8px;    
+}
 
 #wall #sidebar ul{
     padding-top: 16px;
