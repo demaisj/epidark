@@ -964,6 +964,13 @@ fieldset{
 #wall #sidebar > .title{
     display:block;
 }
+    
+    
+#wall #sidebar .msg-alert span a {
+    background: none;
+    padding: 0;
+    color: var(--accent);
+}
 
 .alert{
     /* images/light-sprite.png */
