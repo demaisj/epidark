@@ -1238,16 +1238,17 @@ fieldset{
 }
 
 #homeboard section a.expend{
-    width:24px;
-    height:24px;
+    width:36px;
+    height:36px;
     background:none;
     border:none;
     font-size:0;
-    margin:8px;
+    margin: 15px 24px 15px 16px;
     color:rgba(255, 255, 255, .5);
     border-radius: 100%;
     transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
     padding:0;
+    display:block !important;
 }
 
 #homeboard section a.expend:hover{
@@ -1259,8 +1260,8 @@ fieldset{
 }
 
 #homeboard section a.expend:before{
-    font-size:16px;
-    margin:4px;
+    font-size: 24px;
+    margin: 6px;
 }
 
 #homeboard section h2 {
@@ -1304,7 +1305,7 @@ fieldset{
 }
 
 #homeboard section p.is_hidden{
-    margin: 7px 0;
+    margin: 8.5px 0;
     padding: 16px;
     border-top: none;
 }
@@ -1478,5 +1479,6 @@ fieldset{
 
 #homeboard section div.view_more:active {
     background: rgba(255, 255, 255, .3) !important;
+}
 }
 }
