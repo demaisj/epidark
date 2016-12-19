@@ -1656,4 +1656,14 @@ a.picture:hover{
 #wall #content.wall .bloc .item .identity .arrow.picture{
     display:none;
 }
+
+#profil .picture{
+    float: left !important;
+    width: 128px !important;
+    height: 128px !important;   
+}
+
+#profil .picture img{
+    margin-top: -12px !important;  
+}
 }
