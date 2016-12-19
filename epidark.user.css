@@ -1640,10 +1640,20 @@ fieldset{
     float: none !important;
     margin: 0 !important;
     padding: 0 !important;
+    display: inline-block;
+    border:0 !important;
+}
+
+a.picture:hover{
+ 	opacity:.8;   
 }
     
 .picture img{
     width: 100%;
     margin-top: -8px;    
+}
+
+#wall #content.wall .bloc .item .identity .arrow.picture{
+    display:none;
 }
 }
