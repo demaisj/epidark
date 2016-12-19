@@ -1480,5 +1480,170 @@ fieldset{
 #homeboard section div.view_more:active {
     background: rgba(255, 255, 255, .3) !important;
 }
+
+.datagrid {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    position: relative;
+    border: 1px solid rgba(255,255,255,.12) !important;
+    border-collapse: collapse;
+    white-space: nowrap;
+    font-size: 13px !important;
+    background-color: var(--dark-2);
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
+    color: var(--light-1) !important;
+    line-height: 20px !important;
+    outline: none;
+}
+
+.datagrid > div:first-child,
+.datagrid > div:last-child{
+    /*position:initial !important;*/
+}
+
+.datagrid table {
+    width: 100% !important;
+    background-color: var(--dark-2);
+}
+
+.datagrid table thead th div {
+    background: none !important;
+    border:none !important;
+}
+
+.datagrid table thead th > div > div {
+    position: relative !important;
+    vertical-align: bottom;
+    text-overflow: ellipsis;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0;
+    height: 48px !important;
+    font-size: 12px !important;
+    color: rgba(255,255,255,.54);
+    padding-bottom: 8px !important;
+    box-sizing: border-box;
+    padding: 12px 18px 8px 18px !important;
+    border: none !important;
+    border-left:none !important;
+    transition:.3s ease;
+    background-color: var(--dark-2) !important;
+    cursor:pointer !important;
+}
+
+.datagrid table thead th > div > div:hover {
+    background: var(--dark-1) !important;
+}
+
+.datagrid.resizable table thead th > div > div{
+ 	border-left: 1px dashed rgba(255,255,255,.1) !important;
+}
+
+.datagrid.resizable table thead th:first-child > div > div{
+ 	border-left: none !important;
+}
+
+.datagrid table thead th.mousedown > div > div{
+    background:var(--dark-3) !important;
+	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+}
+
+.datagrid table thead th > div > div label {
+    padding: 0 !important;
+    font-size: 100% !important;
+    cursor:pointer;
+}
+
+.datagrid table thead {
+    padding-bottom: 3px;
+}
+
+.datagrid table tbody tr {
+    background: none !important;
+    position: relative;
+    height: 48px;
+    transition-duration: .28s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: background-color;
+}
+
+.datagrid .overflow {
+    background: none !important;
+}
+
+.datagrid table tbody td {
+    font-size: 100% !important;
+    position: relative;
+    height: 48px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding: 12px 18px;
+    box-sizing: border-box;
+}
+
+.datagrid table tbody tr.ui-selected{
+    background:var(--dark-3) !important;
+}
+
+.datagrid table tbody tr:hover {
+    background: var(--dark-1) !important;
+    color: var(--light-1) !important;
+}
+
+.datagrid table tbody tr a {
+    color: var(--link-color) !important;
+    cursor: pointer;
+}
+
+.datagrid table tfoot {
+    background: none !important;
+}
+
+.datagrid table tfoot tr{
+ 	font-size:100% !important;
+    background:none !important;
+}
+
+.datagrid table tfoot th > div{
+    position: relative !important;
+    vertical-align: bottom;
+    text-overflow: ellipsis;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0;
+    height: 48px !important;
+    font-size: 12px !important;
+    color: rgba(255,255,255,.54);
+    padding-bottom: 8px !important;
+    box-sizing: border-box;
+    padding: 12px 18px 8px 18px !important;
+    border: none !important;
+    text-align:left;
+    border-top: 1px solid rgba(255,255,255,.1) !important;
+}
+.datagrid table thead th .resizer {
+    top: 0px;
+    right: -5px;
+}
+
+#grid-note {
+    width: 33%;
+}
+
+.picture{
+    width: 64px !important;
+    height: 64px !important;
+    overflow: hidden;
+    border-radius: 50%;
+    background-repeat: no-repeat !important;
+    /*background-size:cover !important;*/
+
+    background-color: #FFF !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+    
+.picture img{
+    width: 100%;
+    margin-top: -8px;    
 }
 }
