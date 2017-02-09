@@ -1666,4 +1666,78 @@ a.picture:hover{
 #profil .picture img{
     margin-top: -12px !important;  
 }
+ul.tabs li a {
+    margin: 0;
+    border: none;
+    padding: 0 24px;
+    float: left;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.54);
+    overflow: hidden;
+    background: none;
+    transition: .3s ease;
+}
+
+ul.tabs li a span {
+    background: none;
+    text-shadow: none;
+    padding: 0;
+    height: auto;
+    margin: 0;
+}
+
+ul.tabs {
+    height: 48px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #4e4e4e;
+    background: none;
+}
+
+ul.tabs li.ui-active a {
+    color: rgba(255,255,255,.87);
+}
+
+ul.tabs li.ui-active a:after {
+    height: 2px;
+    width: 100%;
+    display: block;
+    content: " ";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background: var(--accent);
+    -webkit-animation: border-expand .2s cubic-bezier(.4,0,.4,1).01s alternate both;
+    animation: border-expand .2s cubic-bezier(.4,0,.4,1).01s alternate both;
+    transition: all 1s cubic-bezier(.4,0,1,1);
+}
+
+ul.tabs li a:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+ul.tabs li a:active {
+    background: rgba(255, 255, 255, .3);
+}
+
+@keyframes border-expand {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+	
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
 }
