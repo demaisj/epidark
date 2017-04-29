@@ -1,0 +1,11 @@
+/*!
+ * epidark - A dark theme for Epitech Intra
+ * Author: demais (Jordan Demaison)
+ */
+@charset "utf-8";
+
+@import "ripple";
+
+.test{
+  @include ripple(#FFF);
+}
