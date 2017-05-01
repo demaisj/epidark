@@ -2,7 +2,7 @@
 ** source: https://github.com/mladenplavsic/css-ripple-effect
 */
 
-@mixin ripple($color){
+@mixin ripple($color) {
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
@@ -19,9 +19,9 @@
     background-image: radial-gradient(circle, $color 10%, transparent 10.01%);
     background-repeat: no-repeat;
     background-position: 50%;
-    transform: scale(10, 10);
+    transform: scale(11, 11);
     opacity: 0;
-    transition: transform .5s, opacity 1s;
+    transition: transform .3s, opacity 1s;
   }
 
   &:active:after {

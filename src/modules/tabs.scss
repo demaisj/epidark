@@ -1,0 +1,71 @@
+/*
+** tab nav
+*/
+
+ul.tabs {
+  background: none;
+  height: 48px;
+  border-bottom: 1px solid $theme-text-divider;
+
+  li {
+
+    a {
+      @include ripple($theme-text);
+      background: none;
+      height: 48px;
+      line-height: 48px;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin: 0;
+      color: $theme-text-secondary;
+      padding-left: 24px;
+      padding-right: 24px;
+      transition: .3s ease;
+
+      &:hover {
+        background: $theme-text-divider;
+      }
+
+      span {
+        text-shadow: none;
+        height: 48px;
+        background: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    &.ui-active {
+
+      a {
+        color: $theme-text-primary;
+      }
+
+      a:before {
+        height: 2px;
+        width: 100%;
+        display: block;
+        content: " ";
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        background: $accent;
+        animation: tab-indicator-expand .2s cubic-bezier(.4,0,.4,1).01s alternate both;
+        transition: all 1s cubic-bezier(.4,0,1,1);
+
+        @keyframes tab-indicator-expand {
+          0% {
+            opacity: 0;
+            width: 0;
+          }
+
+          100% {
+            opacity: 1;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

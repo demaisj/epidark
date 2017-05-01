@@ -1,0 +1,83 @@
+/*
+** Color definitions
+** https://material.io/guidelines/style/color.html
+*/
+
+/* Text colors */
+
+$dark-text: #000000;
+$dark-text-primary: rgba($dark-text, .87);
+$dark-text-secondary: rgba($dark-text, .54);
+$dark-text-disabled: rgba($dark-text, .38);
+$dark-text-divider: rgba($dark-text, .12);
+
+$light-text: #FFFFFF;
+$light-text-primary: rgba($light-text, 1);
+$light-text-secondary: rgba($light-text, .70);
+$light-text-disabled: rgba($light-text, .50);
+$light-text-divider: rgba($light-text, .12);
+
+/* Icon colors */
+
+$dark-icon: #000000;
+$dark-icon-inactive: rgba($dark-icon, .38);
+$dark-icon-active: rgba($dark-icon, .54);
+
+$light-icon: #FFFFFF;
+$light-icon-inactive: rgba($light-icon, .50);
+$light-icon-active: rgba($light-icon, .100);
+
+/* Theme colors */
+
+$theme-statusbar: #000000;
+$theme-appbar: #212121;
+$theme-background: #303030;
+$theme-card: #424242;
+
+/* light bg
+$theme-statusbar: #e0E0E0;
+$theme-appbar: #f5F5F5;
+$theme-background: #fafafa;
+$theme-card: #ffffff; */
+
+$theme: $theme-background;
+$theme-light: $theme-card;
+$theme-dark: $theme-appbar;
+
+$theme-text: $light-text;
+$theme-text-primary: $light-text-primary;
+$theme-text-secondary: $light-text-secondary;
+$theme-text-disabled: $light-text-disabled;
+$theme-text-divider: $light-text-divider;
+
+/* Specific colors */
+
+$primary: #3f51b5;
+$primary-light: #757de8;
+$primary-dark: #002984;
+
+$primary-text-color: $light-text;
+$primary-text-color-primary: $light-text-primary;
+$primary-text-color-secondary: $light-text-secondary;
+$primary-text-color-disabled: $light-text-disabled;
+$primary-text-color-divider: $light-text-divider;
+$primary-light-text-color: $dark-text;
+$primary-dark-text-color: $light-text;
+
+$primary-icon-color: $light-icon;
+$primary-light-icon-color: $dark-icon;
+$primary-dark-icon-color: $light-icon;
+
+$accent: #e91e63;
+$accent-light: #ff6090;
+$accent-dark: #b0003a;
+
+/*$accent-text-color: $dark-text;*/
+$accent-text-color: $light-text;
+$accent-light-text-color: $dark-text;
+$accent-dark-text-color: $light-text;
+
+/*$accent-icon-color: $dark-text;*/
+$accent-icon-color: $light-text;
+$accent-light-icon-color: $dark-icon;
+$accent-dark-icon-color: $light-icon;

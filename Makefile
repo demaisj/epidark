@@ -1,6 +1,6 @@
 ##
 ## epidark - A dark theme for Epitech Intra
-## Author: demais (Jordan Demaison)
+## Author: demaisj (Jordan Demaison)
 ##
 
 SASS	=	sass
@@ -17,7 +17,7 @@ OUT = $(DIST)/$(NAME).css
 
 all: $(OUT) $(OUTMIN)
 
-$(OUT): $(SRC)/**
+$(OUT): $(SRC)/** $(SRC)/**/*
 	$(SASS) $(SASSFLAGS) $(IN) $(OUT)
 
 clean:

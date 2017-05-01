@@ -1,0 +1,17 @@
+/*
+** miscellaneous elements
+*/
+#header #language {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  margin: 0;
+
+  a{
+    border: none;
+
+    &:hover{
+      transform: scale(1.2);
+    }
+  }
+}

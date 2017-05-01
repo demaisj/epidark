@@ -1,0 +1,569 @@
+/*
+** appbar - header, breacrumbs, notifications
+*/
+
+body {
+  margin-top: 64px * 2 + 16px;
+}
+
+#header {
+  width: 100%;
+}
+
+#header .intra {
+  height: 64px * 2;
+  background: $primary;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: $primary-text-color;
+  z-index: 1000;
+  @include shadow-4dp;
+
+  .header-wrapper {
+    height: 64px * 2;
+    padding-left: 80px;
+    padding-right: 24px;
+  }
+
+  .reserved {
+    display: none;
+  }
+}
+
+#header .intra .navigation {
+  max-width: none;
+  position: absolute;
+  left: 80px + 85px;
+  bottom: 0;
+  height: 48px;
+
+  &:hover {
+    height: 48px;
+  }
+
+  table {
+    display: block;
+  }
+
+  tr {
+    display:block;
+
+    td {
+      display: inline-block;
+
+      .button {
+        @include ripple($primary-text-color);
+        background: none;
+        height: 48px;
+        line-height: 48px;
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin: 0;
+        color: $primary-text-color-secondary;
+        padding-left: 24px;
+        padding-right: 24px;
+        transition: .3s ease;
+
+        &:hover {
+          background: $primary-text-color-divider;
+        }
+
+        .icon {
+          display: none;
+        }
+
+        .label {
+          display: inline;
+          background: none;
+          position: initial;
+          color: inherit;
+          border-radius: 0;
+          padding: 0;
+        }
+      }
+
+      &:hover .button {
+        color: $primary-text-color-secondary;
+      }
+
+      &.ui-active .button {
+        color: $primary-text-color-primary;
+
+        &:before {
+          height: 2px;
+          width: 100%;
+          display: block;
+          content: " ";
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          background: $accent;
+          animation: tab-indicator-expand .2s cubic-bezier(.4,0,.4,1).01s alternate both;
+          transition: all 1s cubic-bezier(.4,0,1,1);
+        }
+      }
+    }
+  }
+}
+
+#breadcrumb {
+  margin: 0;
+  color: $primary-text-color;
+  position: fixed;
+  top: 0;
+  left: 80px;
+  height: 64px;
+  width: calc(100% - 80px - 60px * 4);
+  z-index: 1001;
+  padding: 0 !important;
+
+  ul {
+
+    li {
+      background: none;
+      height: 64px;
+      font-size: 20px;
+      line-height: 64px;
+      font-weight: 500;
+      padding: 0;
+
+      > .label,
+      a {
+        color: $primary-text-color;
+        text-decoration: none;
+        display: inline-block;
+        height: 64px;
+        padding:0 6px;
+      }
+
+      a {
+        @include ripple($primary-text-color);
+        transition: .3s ease;
+
+        &:hover {
+          background: $primary-text-color-divider;
+        }
+      }
+
+      .icon {
+        display: none;
+      }
+
+      .sep {
+        @include icon("chevron_right", 24px, 0px);
+        margin: 0;
+        display: inline-block;
+        vertical-align: top;
+        height: 64px;
+        position: relative;
+        font-size: 0;
+        width: 24px;
+
+        &:before {
+          position: absolute;
+          top: 32px - 12px;
+          left: 0;
+        }
+
+        span {
+          display: none;
+        }
+      }
+
+
+      &.range.end .sep {
+        @include icon("trending_flat", 24px, 0px);
+      }
+
+      &:first-child {
+        padding: 0;
+        height: 48px;
+        width: 85px;
+        background: none;
+        position: fixed;
+        top: 64px * 2 - 48px;
+        left: 80px;
+
+        a {
+          @include ripple($primary-text-color);
+          display: inline-block;
+          line-height: 48px;
+          font-size: 13px;
+          font-weight: 500;
+          text-transform: uppercase;
+          margin: 0;
+          padding-left: 24px;
+          padding-right: 24px;
+          color: $primary-text-color-secondary;
+          text-decoration: none;
+          height: 48px;
+          cursor: pointer;
+
+          &:not([href='/']) {
+            color: $primary-text-color-primary;
+
+            &:before {
+              height: 2px;
+              width: 100%;
+              display: block;
+              content: " ";
+              bottom: 0;
+              left: 0;
+              position: absolute;
+              background: $accent;
+              animation: tab-indicator-expand .2s cubic-bezier(.4,0,.4,1).01s alternate both;
+              transition: all 1s cubic-bezier(.4,0,1,1);
+            }
+          }
+        }
+
+        .icon {
+          display: none;
+        }
+
+        .label {
+          display: inline;
+          font-size: inherit;
+        }
+      }
+    }
+  }
+}
+
+#sidebar #toggle-sidebar {
+  @include ripple($primary-text-color);
+  @include icon("menu", 24px, 12px);
+  position: fixed;
+  top: 8px;
+  left: 12px;
+  z-index: 1001;
+  height: 48px;
+  padding: 0;
+  width: 48px;
+  font-size: 0;
+  background: none;
+  border-radius:100%;
+  transition: .3s ease;
+  color: $primary-text-color;
+
+  &:hover {
+    background: $primary-text-color-divider;
+  }
+}
+
+#header #notification {
+  float: none;
+  position: absolute;
+  top: 8px;
+  right: 48px + 12px + 12px;
+  margin: 0;
+  height: 48px;
+  background: none;
+  border-radius: 0;
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown > a {
+    @include ripple($primary-text-color);
+    background: none;
+    transition: .3s ease;
+    margin: 0;
+    background: none !important;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    border-radius:100% !important;
+    color: $primary-text-color !important;
+    margin-left: 12px;
+    position: relative;
+
+    &:hover {
+      background: $primary-text-color-divider !important;
+      color: $primary-text-color !important;
+    }
+
+    > span {
+      display: none !important;
+    }
+  }
+
+  .dropdown.news > a {
+    .label:not(.mini) {
+      display: block !important;
+
+      .count {
+        text-align: center;
+        position: absolute;
+        font-weight: 600;
+        font-size: 12px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: $accent;
+        color: $accent-text-color;
+        right: 4px;
+        top: 4px;
+      }
+    }
+  }
+
+  .dropdown.ui-expanded > a {
+    background: $primary-text-color-divider !important;
+    color: $primary-text-color !important;
+  }
+
+  .dropdown.rdv > a {
+    @include icon("alarm", 24px, 12px);
+  }
+
+  .dropdown.message > a {
+    @include icon("mail", 24px, 12px);
+  }
+
+  .dropdown.pedago > a {
+    @include icon("error_outline", 24px, 12px);
+  }
+
+  .dropdown .layer {
+    background: $theme-card;
+    padding: 0;
+    border: none;
+    padding: 8px 0px;
+    width: 5 * 64px;
+    @include shadow-8dp;
+    border-radius: 2px;
+    overflow: hidden;
+    animation: appbar-notification-dropdown-expand backwards 1s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 48px;
+    right: 0;
+
+    .item {
+      padding: 0 24px !important;
+      text-align: left;
+      font-style: normal;
+      color: $theme-text-disabled;
+      height: 32px;
+      line-height: 32px;
+      font-size: 15px;
+      cursor: not-allowed;
+      border: none;
+
+      &:hover {
+        background: none;
+        color: $theme-text-disabled;
+      }
+    }
+
+    .loading {
+      margin: 0;
+      padding: 8px 0;
+      height: 32px;
+      cursor: progress;
+
+      img {
+        filter: invert(0.7411);
+      }
+    }
+
+    .empty {
+      padding: 0 24px;
+      text-align: left;
+      font-style: normal;
+      color: $theme-text-disabled;
+      height: 32px;
+      line-height: 32px;
+      font-size: 15px;
+      cursor: not-allowed;
+    }
+  }
+
+  .dropdown.message .layer .item {
+    @include ripple($theme-text);
+    min-height: 32px;
+    cursor: pointer;
+    color: $theme-text-primary;
+    transition: .3s ease;
+    height: auto;
+    padding: 8px 24px !important;
+    position: relative;
+    line-height: 20px;
+    border-bottom: 1px solid $theme-text-divider;
+
+    a{
+      color: $accent;
+      transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+
+      &:hover{
+        text-decoration: underline;
+        color: $accent-dark;
+      }
+    }
+
+    &:hover {
+      background: $theme-text-divider;
+      color: $theme-text-primary;
+    }
+
+    &:before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background: $theme-text-divider;
+      position: absolute;
+      bottom: -7px;
+      left: 0;
+    }
+
+    &:last-child {
+      padding: 0 !important;
+      margin-bottom: 0;
+      border: none;
+      margin-top: 8px;
+
+      a {
+        display: block;
+        height: 32px;
+        padding: 0 24px;
+        line-height: 32px;
+        color: $theme-text-primary;
+        text-decoration: none;
+      }
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+#header #identification {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  width: 48px;
+  height: 48px;
+  min-width: initial;
+
+  .infos {
+    @include ripple($primary-text-color);
+    @include icon("more_vert", 24px, 12px);
+    margin: 0;
+    background: none;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    border-radius:100%;
+    transition: .3s ease;
+    color: $primary-text-color;
+
+    &:hover {
+      background: $primary-text-color-divider;
+      color: $primary-text-color;
+    }
+
+    .picture, .title {
+      display: none;
+    }
+  }
+
+  &.expanded {
+    a.infos {
+      background: $primary-text-color-divider;
+      color: $primary-text-color;
+    }
+
+    .menu {
+      background: $theme-card;
+      padding: 0;
+      border: none;
+      padding: 8px 0px;
+      width: 4 * 64px;
+      @include shadow-8dp;
+      border-radius: 2px;
+      overflow: hidden;
+      animation: appbar-identification-dropdown-expand backwards 1s cubic-bezier(0.4, 0, 0.2, 1);
+      top: 48px;
+      right: 0;
+      min-width: initial;
+
+      > span:not(.links), .links a {
+        display: block;
+        height: 32px;
+        font-size: 15px;
+        line-height: 32px;
+        padding: 0 24px 0 24px;
+        border: 0;
+        transition: .3s ease;
+        position: relative;
+        cursor: not-allowed;
+        color: $theme-text-disabled;
+      }
+
+      > span:not(.links):empty {
+        display: none;
+      }
+
+      > span:not(.links):not(:empty) ~ .links {
+        margin-top: 8px;
+        border-top: $theme-text-divider 1px solid;
+        padding-top: 7px;
+      }
+
+      .links {
+        text-align: left;
+
+        a {
+          @include ripple($theme-text);
+          cursor: pointer;
+          color: $theme-text-primary;
+          transition: .3s ease;
+          text-decoration: none;
+
+          &:hover {
+            background: $theme-text-divider;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes appbar-identification-dropdown-expand{
+  0%{
+    max-width:0;
+    max-height:0;
+    margin-left: 4 * 64px;
+  }
+
+  50%{
+    max-width:4 * 64px;
+    margin-left: 0;
+  }
+
+  100%{
+    max-height:600px;
+  }
+}
+
+@keyframes appbar-notification-dropdown-expand{
+  0%{
+    max-width:0;
+    max-height:0;
+    margin-left: 5 * 64px;
+  }
+
+  50%{
+    max-width:5 * 64px;
+    margin-left: 0;
+  }
+
+  100%{
+    max-height:600px;
+  }
+}

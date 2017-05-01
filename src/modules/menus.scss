@@ -1,0 +1,136 @@
+/*
+** contextual menus
+*/
+.cxm {
+  box-shadow: none;
+  background: none;
+  width: 5 * 64px;
+
+  ul {
+    padding: 0;
+    border: none;
+    background: $theme-card;
+    padding: 16px 0px;
+    width: 5 * 64px;
+    @include shadow-8dp;
+    border-radius: 2px;
+    overflow: hidden;
+    animation: menu-expand-from-left backwards 1s cubic-bezier(0.4, 0, 0.2, 1);
+
+    li.item {
+      @include ripple($theme-text);
+      height: 32px;
+      font-size: 15px;
+      line-height: 32px;
+      padding: 0 24px 0 64px;
+      border: 0;
+      color: $theme-text-primary;
+      transition: .3s ease;
+      cursor: pointer;
+      position: relative;
+
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 24px;
+        width: 32px !important;
+        height: 32px !important;
+        margin: 0 !important;
+        background: none !important;
+      }
+
+      &.checked .icon {
+        @include icon("check", 24px, 4px);
+      }
+
+      &.hide .icon {
+        @include icon("close", 24px, 4px);
+      }
+
+      &.ical .icon {
+        @include icon("today", 24px, 4px);
+      }
+
+      &.token .icon {
+        @include icon("vpn_key", 24px, 4px);
+      }
+
+      &.export .icon {
+        @include icon("file_download", 24px, 4px);
+      }
+
+      label {
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      &:hover {
+        background: $theme-text-divider;
+        border: 0;
+      }
+
+      &.disabled {
+        color: $theme-text-disabled;
+        cursor: not-allowed;
+
+        label {
+          cursor: not-allowed;
+        }
+
+        &:hover {
+          background: none;
+        }
+      }
+    }
+
+    li.spacer {
+      height: 16px;
+      padding: 0;
+      padding-top: 8px;
+
+      div {
+        margin: 0;
+        padding: 0;
+        border-top: $theme-text-divider 1px solid;
+        border-bottom: none;
+      }
+    }
+  }
+
+  &.right ul {
+    animation: menu-expand-from-right backwards 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes menu-expand-from-right{
+    0%{
+      max-width:0;
+      max-height:0;
+      margin-left: 5 * 64px;
+    }
+
+    50%{
+      max-width:5 * 64px;
+      margin-left: 0;
+    }
+
+    100%{
+      max-height:600px;
+    }
+  }
+
+  @keyframes menu-expand-from-left{
+    0%{
+      max-width:0;
+      max-height:0;
+    }
+
+    50%{
+      max-width:5 * 64px;
+    }
+
+    100%{
+      max-height:600px;
+    }
+  }
+}

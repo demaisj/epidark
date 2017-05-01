@@ -1,11 +1,39 @@
-/*!
- * epidark - A dark theme for Epitech Intra
- * Author: demais (Jordan Demaison)
- */
 @charset "utf-8";
+/*!
+** epidark - A dark theme for Epitech Intra
+** Author: demaisj (Jordan Demaison)
+*/
 
-@import "ripple";
+/*
+** external css
+*/
+@import "https://fonts.googleapis.com/css?family=Material+Icons|Roboto:300,400,500,600,700";
 
-.test{
-  @include ripple(#FFF);
-}
+/*
+** userstyle metadata
+*/
+/* @-moz-document domain("intra.epitech.eu") { */
+
+/*
+** variables
+*/
+@import "vars/colors";
+@import "vars/typography";
+
+/*
+** mixins
+*/
+@import "mixins/ripple";
+@import "mixins/shadows";
+@import "mixins/icons";
+
+/*
+** modules
+*/
+@import "modules/base";
+@import "modules/misc";
+@import "modules/tabs";
+@import "modules/menus";
+@import "modules/appbar";
+
+/* } */
